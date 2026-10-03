@@ -4328,3 +4328,1610 @@ h3 {
     }
 
 }
+
+/* =========================================================
+   26. REFINAMENTOS FINAIS
+   - menu mobile refeito com :target
+   - modais com fechamento corrigido
+   - agendamento direcionado ao WhatsApp
+   - espaçamentos e responsividade refinados
+========================================================= */
+
+/* -------------------------
+   AJUSTES GERAIS DE RITMO
+------------------------- */
+
+:root {
+    --container: 1200px;
+    --container-padding: clamp(18px, 3.4vw, 36px);
+}
+
+.section {
+    padding-block: clamp(70px, 7.2vw, 108px);
+}
+
+.section-heading {
+    gap: clamp(24px, 4vw, 48px);
+    margin-bottom: clamp(36px, 4.5vw, 58px);
+}
+
+.section-tag {
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.section-heading h2,
+.about__content h2,
+.reviews__heading h2,
+.location__content h2,
+.modal h2 {
+    font-size: clamp(3.15rem, 5.5vw, 5.4rem);
+}
+
+.button {
+    min-height: 50px;
+    padding-inline: 24px;
+}
+
+body:has(.modal:target),
+body:has(.mobile-nav:target) {
+    overflow: hidden;
+}
+
+
+/* -------------------------
+   HEADER
+------------------------- */
+
+.header__container {
+    min-height: 76px;
+}
+
+.header__nav {
+    gap: clamp(20px, 2vw, 31px);
+    margin-right: 26px;
+}
+
+
+/* -------------------------
+   HERO
+------------------------- */
+
+.hero {
+    padding-top: 100px;
+    padding-bottom: 52px;
+}
+
+.hero__container {
+    gap: clamp(36px, 5vw, 72px);
+}
+
+.hero__title {
+    font-size: clamp(5.2rem, 9vw, 8.4rem);
+}
+
+.hero__description {
+    margin-top: 25px;
+    line-height: 1.72;
+}
+
+.hero__actions {
+    margin-top: 30px;
+}
+
+.hero__info {
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.hero__image-wrapper {
+    width: min(100%, 485px);
+}
+
+.hero__floating--top {
+    left: -42px;
+}
+
+.hero__floating--bottom {
+    right: -18px;
+}
+
+
+/* -------------------------
+   SERVIÇOS
+------------------------- */
+
+.service-card {
+    min-height: 360px;
+    padding: clamp(23px, 2.4vw, 30px);
+    border-radius: 26px;
+}
+
+.service-card__body p {
+    line-height: 1.65;
+}
+
+.service-card__footer {
+    margin-top: 24px;
+    padding-top: 17px;
+}
+
+.services__bottom {
+    margin-top: 28px;
+    padding-top: 22px;
+}
+
+
+/* -------------------------
+   SOBRE
+------------------------- */
+
+.about__container {
+    gap: clamp(45px, 6vw, 80px);
+}
+
+.about__visual {
+    min-height: 560px;
+}
+
+.about__lead {
+    margin-top: 25px;
+}
+
+.about__features {
+    margin-top: 30px;
+}
+
+.about__features > div {
+    padding-block: 15px;
+}
+
+.text-link {
+    margin-top: 28px;
+}
+
+
+/* -------------------------
+   EXPERIÊNCIA
+------------------------- */
+
+.experience {
+    min-height: 520px;
+}
+
+.experience blockquote {
+    margin-bottom: 32px;
+}
+
+
+/* -------------------------
+   GALERIA
+------------------------- */
+
+.gallery__grid {
+    grid-auto-rows: clamp(225px, 24vw, 290px);
+    gap: 12px;
+}
+
+
+/* -------------------------
+   DEPOIMENTOS
+------------------------- */
+
+.reviews__heading {
+    margin-bottom: clamp(36px, 4.5vw, 56px);
+}
+
+.review-card {
+    min-height: 285px;
+    padding: 26px;
+}
+
+.review-card > p {
+    margin-top: 24px;
+}
+
+.review-card footer {
+    padding-top: 28px;
+}
+
+
+/* -------------------------
+   LOCALIZAÇÃO
+------------------------- */
+
+.location__container {
+    gap: clamp(48px, 6vw, 78px);
+}
+
+.location__content > p {
+    margin-top: 20px;
+}
+
+.location__details {
+    margin: 30px 0;
+}
+
+.location-item {
+    padding-block: 15px;
+}
+
+.location__visual {
+    height: clamp(430px, 48vw, 560px);
+}
+
+
+/* -------------------------
+   CTA E FOOTER
+------------------------- */
+
+.cta {
+    padding: clamp(78px, 8vw, 108px) 0;
+}
+
+.cta p {
+    margin: 20px auto 30px;
+}
+
+.footer {
+    padding: 54px 0 24px;
+}
+
+.footer__line {
+    margin: 45px 0 22px;
+}
+
+
+/* =========================================================
+   MENU MOBILE — CORREÇÃO DEFINITIVA
+   Agora o menu usa :target, fecha ao navegar e possui
+   fundo forte mesmo em navegadores sem backdrop-filter.
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .menu-button {
+        position: relative;
+        z-index: 3;
+
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        flex-direction: column;
+
+        width: 44px;
+        height: 44px;
+
+        gap: 5px;
+
+        margin-left: auto;
+        padding: 9px;
+
+        border: 1px solid rgba(255, 243, 176, 0.1);
+        border-radius: 50%;
+
+        background: rgba(255, 255, 255, 0.025);
+
+        cursor: pointer;
+
+        transition:
+            border-color var(--transition),
+            background var(--transition),
+            transform var(--transition);
+    }
+
+    .menu-button:hover,
+    .menu-button:focus-visible {
+        border-color: rgba(224, 159, 62, 0.38);
+        background: rgba(224, 159, 62, 0.07);
+        outline: none;
+    }
+
+    .menu-button span {
+        width: 23px;
+        height: 1.5px;
+
+        background: var(--vanilla);
+
+        transition:
+            width var(--transition),
+            transform var(--transition);
+    }
+
+    .menu-button span:nth-child(2) {
+        width: 17px;
+    }
+
+    .menu-button:hover span:nth-child(2) {
+        width: 23px;
+    }
+
+    .mobile-nav {
+        position: fixed;
+        z-index: 2000;
+
+        inset: 0;
+
+        display: block;
+
+        width: 100vw;
+        height: 100dvh;
+
+        visibility: hidden;
+        opacity: 0;
+
+        pointer-events: none;
+
+        background: rgba(3, 10, 12, 0.78);
+
+        isolation: isolate;
+        overscroll-behavior: contain;
+
+        transition:
+            opacity 280ms ease,
+            visibility 280ms ease;
+    }
+
+    .mobile-nav:target {
+        visibility: visible;
+        opacity: 1;
+
+        pointer-events: auto;
+    }
+
+    .mobile-nav__overlay {
+        position: absolute;
+        z-index: 0;
+
+        inset: 0;
+
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(3, 10, 12, 0.86),
+                rgba(3, 10, 12, 0.62)
+            );
+
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+
+        opacity: 1;
+    }
+
+    .mobile-nav__panel {
+        position: absolute;
+        z-index: 1;
+
+        top: 0;
+        right: 0;
+
+        display: flex;
+        flex-direction: column;
+
+        width: min(88vw, 370px);
+        height: 100dvh;
+
+        padding:
+            max(22px, env(safe-area-inset-top))
+            22px
+            max(22px, env(safe-area-inset-bottom));
+
+        overflow-y: auto;
+
+        transform: translateX(102%);
+
+        border-left: 1px solid rgba(255, 243, 176, 0.13);
+
+        background:
+            radial-gradient(
+                circle at 100% 0%,
+                rgba(158, 42, 43, 0.21),
+                transparent 34%
+            ),
+            radial-gradient(
+                circle at 0% 100%,
+                rgba(224, 159, 62, 0.08),
+                transparent 34%
+            ),
+            #0b1c20;
+
+        box-shadow:
+            -30px 0 90px rgba(0, 0, 0, 0.62);
+
+        transition:
+            transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .mobile-nav:target .mobile-nav__panel {
+        transform: translateX(0);
+    }
+
+    .mobile-nav__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding-bottom: 20px;
+
+        border-bottom: 1px solid var(--border);
+    }
+
+    .mobile-nav__header > div {
+        display: flex;
+        flex-direction: column;
+
+        gap: 3px;
+    }
+
+    .mobile-nav__header small {
+        color: var(--yellow);
+
+        font-size: 0.52rem;
+        font-weight: 800;
+
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+    }
+
+    .mobile-nav__header strong {
+        color: var(--vanilla);
+
+        font-family: var(--font-display);
+        font-size: 1.65rem;
+        font-weight: 400;
+
+        line-height: 1;
+    }
+
+    .mobile-nav__close {
+        display: grid;
+        place-items: center;
+
+        width: 42px;
+        height: 42px;
+
+        flex-shrink: 0;
+
+        border: 1px solid rgba(255, 243, 176, 0.14);
+        border-radius: 50%;
+
+        background: rgba(255, 255, 255, 0.035);
+        color: var(--vanilla);
+
+        font-size: 1.55rem;
+        line-height: 1;
+
+        cursor: pointer;
+
+        transition:
+            transform var(--transition),
+            color var(--transition),
+            background var(--transition);
+    }
+
+    .mobile-nav__close:hover,
+    .mobile-nav__close:focus-visible {
+        transform: rotate(90deg);
+
+        background: var(--yellow);
+        color: var(--slate-950);
+
+        outline: none;
+    }
+
+    .mobile-nav nav {
+        display: grid;
+
+        margin-top: 20px;
+    }
+
+    .mobile-nav nav a {
+        display: flex;
+        align-items: center;
+
+        gap: 14px;
+
+        min-height: 57px;
+        padding: 12px 2px;
+
+        border-bottom: 1px solid rgba(255, 243, 176, 0.09);
+
+        color: var(--text);
+
+        font-family: var(--font-display);
+        font-size: 1.75rem;
+
+        line-height: 1;
+
+        transition:
+            color var(--transition),
+            padding-left var(--transition),
+            border-color var(--transition);
+    }
+
+    .mobile-nav nav a:hover,
+    .mobile-nav nav a:focus-visible {
+        padding-left: 6px;
+
+        border-color: rgba(224, 159, 62, 0.28);
+
+        color: var(--yellow);
+
+        outline: none;
+    }
+
+    .mobile-nav nav a span {
+        min-width: 22px;
+
+        color: var(--yellow);
+
+        font-family: var(--font-body);
+        font-size: 0.52rem;
+        font-weight: 800;
+    }
+
+    .mobile-nav__cta {
+        width: 100%;
+
+        margin-top: auto;
+    }
+
+    .mobile-nav__note {
+        margin-top: 12px;
+
+        color: var(--text-soft);
+
+        font-size: 0.62rem;
+        line-height: 1.55;
+
+        text-align: center;
+    }
+}
+
+
+/* =========================================================
+   MODAIS — CORREÇÕES DE CAMADAS, CLIQUES E MOBILE
+========================================================= */
+
+.modal {
+    isolation: isolate;
+}
+
+.modal__backdrop {
+    z-index: 0;
+}
+
+.modal__content {
+    z-index: 2;
+}
+
+.modal__close {
+    z-index: 20;
+
+    background: rgba(8, 19, 22, 0.72);
+
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+
+    pointer-events: auto;
+    touch-action: manipulation;
+}
+
+.modal__close:focus-visible {
+    outline: 2px solid var(--yellow);
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   AGENDAMENTO VIA WHATSAPP
+========================================================= */
+
+.modal__content--booking {
+    width: min(100%, 920px);
+}
+
+.booking {
+    grid-template-columns:
+        minmax(0, 0.9fr)
+        minmax(0, 1.1fr);
+}
+
+.booking__intro {
+    padding: clamp(32px, 4vw, 46px);
+}
+
+.booking__intro > p {
+    margin-top: 19px;
+    line-height: 1.68;
+}
+
+.booking__info {
+    margin-top: 30px;
+}
+
+.booking__info > div {
+    padding: 12px 0;
+}
+
+.booking__action {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: clamp(34px, 4.2vw, 50px);
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(51, 92, 103, 0.26),
+            transparent 38%
+        ),
+        var(--slate-900);
+}
+
+.booking__action::after {
+    content: "";
+
+    position: absolute;
+
+    right: -110px;
+    bottom: -140px;
+
+    width: 260px;
+    height: 260px;
+
+    border: 1px solid rgba(224, 159, 62, 0.08);
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 35px rgba(224, 159, 62, 0.025),
+        0 0 0 70px rgba(224, 159, 62, 0.015);
+
+    pointer-events: none;
+}
+
+.booking__whatsapp-icon {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    place-items: center;
+
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 18px;
+
+    border: 1px solid rgba(224, 159, 62, 0.22);
+    border-radius: 18px;
+
+    background: rgba(224, 159, 62, 0.08);
+    color: var(--yellow);
+}
+
+.booking__whatsapp-icon svg {
+    width: 28px;
+    height: 28px;
+
+    fill: none;
+
+    stroke: currentColor;
+    stroke-width: 1.55;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.booking__status {
+    position: relative;
+    z-index: 1;
+
+    display: inline-flex;
+    align-items: center;
+
+    align-self: flex-start;
+
+    gap: 8px;
+
+    padding: 7px 10px;
+
+    border: 1px solid rgba(255, 243, 176, 0.1);
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.025);
+    color: var(--text-muted);
+
+    font-size: 0.57rem;
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.booking__status i {
+    position: relative;
+
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #8dc96f;
+}
+
+.booking__status i::after {
+    content: "";
+
+    position: absolute;
+
+    inset: -4px;
+
+    border: 1px solid rgba(141, 201, 111, 0.42);
+    border-radius: inherit;
+
+    animation: statusPulse 2s ease-out infinite;
+}
+
+.booking__action h3 {
+    position: relative;
+    z-index: 1;
+
+    max-width: 430px;
+
+    margin-top: 19px;
+
+    color: var(--vanilla);
+
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 4vw, 3.7rem);
+    font-weight: 400;
+
+    line-height: 0.98;
+}
+
+.booking__action h3 em {
+    display: block;
+
+    color: var(--yellow);
+
+    font-style: normal;
+}
+
+.booking__action > p {
+    position: relative;
+    z-index: 1;
+
+    max-width: 430px;
+
+    margin-top: 15px;
+
+    color: var(--text-muted);
+
+    font-size: 0.76rem;
+    line-height: 1.7;
+}
+
+.booking__summary {
+    position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 23px;
+}
+
+.booking__summary > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+
+    min-width: 0;
+
+    padding: 13px 14px;
+
+    border: 1px solid var(--border);
+    border-radius: 13px;
+
+    background: rgba(255, 255, 255, 0.022);
+}
+
+.booking__summary span {
+    color: var(--text-soft);
+
+    font-size: 0.55rem;
+    font-weight: 700;
+
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.booking__summary strong {
+    color: var(--vanilla);
+
+    font-size: 0.7rem;
+}
+
+.button--whatsapp {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+
+    margin-top: 18px;
+
+    background: var(--yellow);
+    color: var(--slate-950);
+
+    box-shadow:
+        0 14px 40px rgba(224, 159, 62, 0.16);
+}
+
+.button--whatsapp:hover {
+    background: var(--vanilla);
+
+    box-shadow:
+        0 18px 48px rgba(224, 159, 62, 0.22);
+}
+
+.booking__privacy {
+    position: relative;
+    z-index: 1;
+
+    display: block;
+
+    margin-top: 11px;
+
+    color: var(--text-soft);
+
+    font-size: 0.57rem;
+    line-height: 1.55;
+
+    text-align: center;
+}
+
+
+/* -------------------------
+   BOTÃO FLUTUANTE WHATSAPP
+------------------------- */
+
+.whatsapp-float {
+    position: fixed;
+    z-index: 900;
+
+    right: 22px;
+    bottom: 22px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    min-height: 48px;
+
+    padding: 0 17px 0 14px;
+
+    border: 1px solid rgba(255, 243, 176, 0.16);
+    border-radius: 999px;
+
+    background: rgba(12, 27, 31, 0.9);
+    color: var(--vanilla);
+
+    box-shadow:
+        0 16px 42px rgba(0, 0, 0, 0.3);
+
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+
+    font-size: 0.65rem;
+    font-weight: 800;
+
+    letter-spacing: 0.04em;
+
+    transition:
+        transform var(--transition),
+        border-color var(--transition),
+        background var(--transition);
+}
+
+.whatsapp-float svg {
+    width: 21px;
+    height: 21px;
+
+    fill: none;
+
+    stroke: var(--yellow);
+    stroke-width: 1.55;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible {
+    transform: translateY(-4px);
+
+    border-color: rgba(224, 159, 62, 0.38);
+
+    background: var(--slate-850);
+
+    outline: none;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE REFINADA — TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    :root {
+        --container-padding: clamp(18px, 4vw, 28px);
+    }
+
+    .section {
+        padding-block: clamp(64px, 8vw, 82px);
+    }
+
+    .header__container {
+        min-height: 68px;
+    }
+
+    .hero {
+        padding: 102px 0 68px;
+    }
+
+    .hero__container {
+        gap: 48px;
+    }
+
+    .hero__title {
+        font-size: clamp(4.9rem, 14vw, 7.6rem);
+    }
+
+    .hero__image-wrapper {
+        width: min(82%, 520px);
+    }
+
+    .section-heading {
+        gap: 18px;
+    }
+
+    .services__grid {
+        gap: 12px;
+    }
+
+    .service-card:last-child {
+        min-height: 315px;
+    }
+
+    .about__container {
+        gap: 54px;
+    }
+
+    .about__visual {
+        min-height: 520px;
+    }
+
+    .gallery__grid {
+        grid-auto-rows: 285px;
+    }
+
+    .location__container {
+        gap: 52px;
+    }
+
+    .location__visual {
+        height: 500px;
+    }
+
+    .booking {
+        grid-template-columns: 1fr;
+    }
+
+    .booking__intro {
+        padding-bottom: 32px;
+    }
+
+    .booking__info {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        gap: 8px;
+
+        margin-top: 24px;
+    }
+
+    .booking__info > div {
+        align-items: flex-start;
+        flex-direction: column;
+
+        gap: 8px;
+
+        padding: 12px;
+
+        border: 1px solid rgba(255, 243, 176, 0.1);
+        border-radius: 12px;
+    }
+
+    .booking__info > div:last-child {
+        border-bottom: 1px solid rgba(255, 243, 176, 0.1);
+    }
+
+    .booking__action {
+        padding: 34px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE REFINADA — MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    :root {
+        --container-padding: 16px;
+    }
+
+    html {
+        scroll-padding-top: 66px;
+    }
+
+    .section {
+        padding-block: 62px;
+    }
+
+    .header__container {
+        min-height: 64px;
+    }
+
+    .brand {
+        gap: 10px;
+    }
+
+    .brand__symbol {
+        width: 35px;
+        height: 35px;
+    }
+
+    .menu-button {
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+    }
+
+    .mobile-nav__panel {
+        width: min(91vw, 355px);
+
+        padding:
+            max(18px, env(safe-area-inset-top))
+            18px
+            max(18px, env(safe-area-inset-bottom));
+    }
+
+    .mobile-nav nav {
+        margin-top: 14px;
+    }
+
+    .mobile-nav nav a {
+        min-height: 52px;
+
+        padding-block: 10px;
+
+        font-size: 1.65rem;
+    }
+
+    .mobile-nav__cta {
+        min-height: 48px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        padding: 92px 0 54px;
+    }
+
+    .hero__container {
+        gap: 38px;
+    }
+
+    .hero__eyebrow {
+        margin-bottom: 16px;
+    }
+
+    .hero__title {
+        font-size: clamp(3.9rem, 19vw, 5.65rem);
+        line-height: 0.82;
+    }
+
+    .hero__description {
+        margin-top: 18px;
+
+        font-size: 0.82rem;
+        line-height: 1.65;
+    }
+
+    .hero__actions {
+        gap: 9px;
+
+        margin-top: 23px;
+    }
+
+    .hero__actions .button {
+        min-height: 48px;
+    }
+
+    .hero__info {
+        flex-wrap: wrap;
+
+        gap: 14px 18px;
+
+        margin-top: 27px;
+    }
+
+    .hero__info strong {
+        font-size: 1.55rem;
+    }
+
+    .hero__image-wrapper {
+        width: 100%;
+        aspect-ratio: 0.9;
+    }
+
+    .hero__floating {
+        border-radius: 13px;
+    }
+
+    .hero__floating--top {
+        left: 4px;
+    }
+
+    .hero__floating--bottom {
+        right: 4px;
+    }
+
+
+    /* TÍTULOS */
+
+    .section-heading {
+        margin-bottom: 32px;
+    }
+
+    .section-heading h2,
+    .about__content h2,
+    .reviews__heading h2,
+    .location__content h2,
+    .modal h2 {
+        font-size: clamp(3rem, 14vw, 4.45rem);
+    }
+
+    .section-heading > p {
+        font-size: 0.82rem;
+        line-height: 1.65;
+    }
+
+
+    /* SERVIÇOS */
+
+    .services__grid {
+        gap: 10px;
+    }
+
+    .service-card,
+    .service-card:last-child {
+        min-height: 305px;
+
+        padding: 23px;
+
+        border-radius: 22px;
+    }
+
+    .service-card__icon {
+        width: 56px;
+        height: 56px;
+
+        border-radius: 16px;
+    }
+
+    .service-card__body h3 {
+        font-size: 2rem;
+    }
+
+    .service-card__body p {
+        font-size: 0.78rem;
+    }
+
+    .services__bottom {
+        gap: 15px;
+
+        margin-top: 22px;
+        padding-top: 19px;
+    }
+
+
+    /* SOBRE */
+
+    .about__container {
+        gap: 40px;
+    }
+
+    .about__visual {
+        min-height: 410px;
+    }
+
+    .about__experience {
+        top: 53%;
+
+        padding: 10px 13px;
+    }
+
+    .about__experience > strong {
+        font-size: 2.15rem;
+    }
+
+    .about__lead {
+        margin-top: 20px;
+
+        font-size: 1rem;
+    }
+
+    .about__features {
+        margin-top: 23px;
+    }
+
+    .about__features > div {
+        padding-block: 13px;
+    }
+
+    .text-link {
+        margin-top: 23px;
+    }
+
+
+    /* EXPERIÊNCIA */
+
+    .experience {
+        min-height: 430px;
+    }
+
+    .experience blockquote {
+        margin-bottom: 27px;
+
+        font-size: clamp(3rem, 13vw, 4.5rem);
+    }
+
+
+    /* GALERIA */
+
+    .gallery__grid {
+        grid-auto-rows: 285px;
+        gap: 10px;
+    }
+
+    .gallery-card {
+        border-radius: 17px;
+    }
+
+
+    /* DEPOIMENTOS */
+
+    .reviews__heading {
+        margin-bottom: 32px;
+    }
+
+    .reviews__grid {
+        gap: 10px;
+    }
+
+    .review-card {
+        min-height: 250px;
+
+        padding: 23px;
+
+        border-radius: 17px;
+    }
+
+    .review-card > p {
+        margin-top: 20px;
+    }
+
+    .review-card footer {
+        padding-top: 23px;
+    }
+
+
+    /* LOCALIZAÇÃO */
+
+    .location__container {
+        gap: 42px;
+    }
+
+    .location__content > p {
+        margin-top: 16px;
+
+        font-size: 0.82rem;
+    }
+
+    .location__details {
+        margin: 24px 0;
+    }
+
+    .location-item {
+        gap: 13px;
+
+        padding-block: 13px;
+    }
+
+    .location-item__icon {
+        width: 42px;
+        height: 42px;
+
+        border-radius: 12px;
+    }
+
+    .location__visual {
+        height: 390px;
+    }
+
+    .location__card {
+        right: 10px;
+        bottom: 16px;
+
+        width: min(78%, 260px);
+
+        padding: 18px;
+    }
+
+
+    /* CTA */
+
+    .cta {
+        padding: 68px 0;
+    }
+
+    .cta__symbol {
+        width: 48px;
+        height: 48px;
+
+        margin-bottom: 18px;
+    }
+
+    .cta h2 {
+        font-size: clamp(3.5rem, 16vw, 5rem);
+    }
+
+    .cta p {
+        margin: 17px auto 25px;
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+        padding: 44px 0 22px;
+    }
+
+    .footer__top {
+        gap: 38px;
+    }
+
+    .footer__brand > p {
+        margin-top: 18px;
+    }
+
+    .footer__navigation {
+        gap: 22px;
+    }
+
+    .footer__line {
+        margin: 35px 0 19px;
+    }
+
+
+    /* MODAIS COMO BOTTOM SHEET */
+
+    .modal {
+        align-items: end;
+        justify-items: center;
+
+        padding: 8px;
+    }
+
+    .modal__content {
+        width: 100%;
+        max-height: calc(100dvh - 16px);
+
+        padding: 28px 22px 24px;
+
+        border-radius: 24px 24px 17px 17px;
+    }
+
+    .modal__content--booking {
+        padding: 0;
+
+        overflow-y: auto;
+    }
+
+    .modal__close {
+        top: 13px;
+        right: 13px;
+
+        width: 42px;
+        height: 42px;
+    }
+
+    .modal__services {
+        margin: 25px 0;
+    }
+
+    .modal__services > div {
+        padding: 13px 0;
+    }
+
+    .booking__intro {
+        padding: 28px 22px 24px;
+    }
+
+    .booking__intro h2 {
+        padding-right: 35px;
+    }
+
+    .booking__intro > p {
+        max-width: 95%;
+
+        margin-top: 15px;
+    }
+
+    .booking__info {
+        display: none;
+    }
+
+    .booking__action {
+        padding: 26px 22px 25px;
+    }
+
+    .booking__whatsapp-icon {
+        width: 50px;
+        height: 50px;
+
+        margin-bottom: 14px;
+
+        border-radius: 15px;
+    }
+
+    .booking__action h3 {
+        margin-top: 15px;
+
+        font-size: clamp(2.25rem, 10vw, 3rem);
+    }
+
+    .booking__action > p {
+        margin-top: 12px;
+
+        font-size: 0.72rem;
+    }
+
+    .booking__summary {
+        margin-top: 18px;
+    }
+
+    .booking__summary > div {
+        padding: 11px 12px;
+    }
+
+    .booking__whatsapp-button {
+        min-height: 49px;
+
+        margin-top: 15px;
+    }
+
+    .whatsapp-float {
+        right: 14px;
+        bottom: 14px;
+
+        width: 52px;
+        height: 52px;
+        min-height: 52px;
+
+        justify-content: center;
+
+        padding: 0;
+
+        border-radius: 50%;
+    }
+
+    .whatsapp-float span {
+        display: none;
+    }
+
+    .whatsapp-float svg {
+        width: 23px;
+        height: 23px;
+    }
+}
+
+
+/* =========================================================
+   TELAS PEQUENAS E BAIXAS
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .hero__title {
+        font-size: clamp(3.65rem, 18vw, 4.6rem);
+    }
+
+    .hero__info {
+        align-items: flex-start;
+    }
+
+    .hero__info > div:first-child {
+        flex-wrap: wrap;
+    }
+
+    .hero__floating--top {
+        display: none;
+    }
+
+    .gallery__grid {
+        grid-auto-rows: 260px;
+    }
+
+    .about__visual {
+        min-height: 365px;
+    }
+
+    .booking__summary {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__navigation {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media (max-height: 720px) and (min-width: 651px) {
+
+    .hero {
+        min-height: 720px;
+    }
+
+    .modal__content {
+        max-height: calc(100dvh - 28px);
+    }
+}
+
+
+/* =========================================================
+   HOVER APENAS ONDE EXISTE PONTEIRO PRECISO
+========================================================= */
+
+@media (hover: none) {
+
+    .service-card:hover,
+    .review-card:hover,
+    .button:hover,
+    .whatsapp-float:hover {
+        transform: none;
+    }
+
+    .hero__image-wrapper:hover .hero__image,
+    .about__image-main:hover img,
+    .gallery-card:hover img {
+        transform: none;
+    }
+}
