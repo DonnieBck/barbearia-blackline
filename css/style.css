@@ -5935,3 +5935,30 @@ body:has(.mobile-nav:target) {
         transform: none;
     }
 }
+/* =========================================================
+   MENSAGENS DE FORMULÁRIO
+========================================================= */
+
+.form-error {
+    color: #ff9b9b;
+    font-size: 0.62rem;
+}
+
+.form-status {
+    padding: 12px 14px;
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    font-size: 0.74rem;
+}
+
+.form-status[data-state="success"] {
+    border-color: #8dc96f;
+    color: #cfeab9;
+}
+
+.form-status[data-state="error"] {
+    border-color: var(--auburn);
+    color: #ffb4b4;
+}
