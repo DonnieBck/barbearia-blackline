@@ -89,46 +89,45 @@
             </a>
 
 
-            <!-- MENU MOBILE SEM JAVASCRIPT -->
-            <input
-                type="checkbox"
-                id="menu-toggle"
-                class="menu-toggle"
-                aria-hidden="true"
-            >
-
-            <label
-                for="menu-toggle"
+            <!-- MENU MOBILE SEM JAVASCRIPT
+                 Usa :target para abrir/fechar. Assim, ao tocar em qualquer
+                 link de navegação, o menu é fechado automaticamente. -->
+            <a
+                href="#menu-mobile"
                 class="menu-button"
                 aria-label="Abrir menu"
+                aria-controls="menu-mobile"
             >
                 <span></span>
                 <span></span>
                 <span></span>
-            </label>
+            </a>
 
 
-            <div class="mobile-nav">
+            <div class="mobile-nav" id="menu-mobile">
 
-                <label
-                    for="menu-toggle"
+                <a
+                    href="#inicio"
                     class="mobile-nav__overlay"
                     aria-label="Fechar menu"
-                ></label>
+                ></a>
 
                 <div class="mobile-nav__panel">
 
                     <div class="mobile-nav__header">
 
-                        <span>Menu</span>
+                        <div>
+                            <small>Navegação</small>
+                            <strong>Menu</strong>
+                        </div>
 
-                        <label
-                            for="menu-toggle"
+                        <a
+                            href="#inicio"
                             class="mobile-nav__close"
                             aria-label="Fechar menu"
                         >
                             ×
-                        </label>
+                        </a>
 
                     </div>
 
@@ -165,8 +164,17 @@
                         href="#agendar"
                         class="button button--primary mobile-nav__cta"
                     >
-                        Agendar horário
+                        Agendar pelo WhatsApp
+
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M5 12h14"></path>
+                            <path d="m13 6 6 6-6 6"></path>
+                        </svg>
                     </a>
+
+                    <p class="mobile-nav__note">
+                        Atendimento rápido e direto com a equipe Blackline.
+                    </p>
 
                 </div>
 
@@ -1234,7 +1242,7 @@
                         <a href="#localizacao">Localização</a>
                         <a href="#agendar">Agendamento</a>
                         <a href="#">Instagram</a>
-                        <a href="#">WhatsApp</a>
+                        <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
                     </div>
 
                 </div>
@@ -1363,6 +1371,9 @@
 
     <!-- =====================================================
          MODAL - AGENDAMENTO
+         O agendamento é finalizado diretamente pelo WhatsApp.
+         IMPORTANTE: troque 5500000000000 pelo número real da empresa
+         no formato: 55 + DDD + número, sem espaços ou símbolos.
     ====================================================== -->
 
     <div
@@ -1401,14 +1412,15 @@
                     </span>
 
                     <h2 id="booking-title">
-                        RESERVE SEU
-                        <em>HORÁRIO.</em>
+                        RESERVE PELO
+                        <em>WHATSAPP.</em>
                     </h2>
 
                     <p>
-                        Escolha os dados do seu atendimento.
-                        Depois você poderá conectar este formulário
-                        ao seu back-end ou sistema de agendamento.
+                        Sem formulários e sem etapas desnecessárias.
+                        Fale diretamente com a equipe Blackline,
+                        consulte os horários disponíveis e confirme
+                        seu atendimento pelo WhatsApp.
                     </p>
 
 
@@ -1416,17 +1428,17 @@
 
                         <div>
                             <span>01</span>
-                            <p>Escolha o serviço</p>
+                            <p>Abra a conversa no WhatsApp</p>
                         </div>
 
                         <div>
                             <span>02</span>
-                            <p>Defina a melhor data</p>
+                            <p>Informe o serviço e o melhor horário</p>
                         </div>
 
                         <div>
                             <span>03</span>
-                            <p>Confirme seu atendimento</p>
+                            <p>Receba a confirmação da equipe</p>
                         </div>
 
                     </div>
@@ -1434,143 +1446,93 @@
                 </div>
 
 
-                <form
-                    class="booking__form"
-                    action="#"
-                    method="post"
-                >
+                <div class="booking__action">
 
-                    <div class="form-group">
+                    <div class="booking__whatsapp-icon" aria-hidden="true">
 
-                        <label for="nome">
-                            Seu nome
-                        </label>
-
-                        <input
-                            type="text"
-                            id="nome"
-                            name="nome"
-                            placeholder="Digite seu nome"
-                            required
-                        >
+                        <svg viewBox="0 0 24 24">
+                            <path d="M20 11.6a8 8 0 0 1-11.8 7L4 20l1.4-4.1A8 8 0 1 1 20 11.6Z"></path>
+                            <path d="M8.7 8.2c.2-.4.4-.4.7-.4h.4c.2 0 .4.1.5.4l.7 1.7c.1.3 0 .5-.2.7l-.5.6c-.2.2-.2.4-.1.6.4.8 1 1.5 1.7 2 .8.6 1.5.9 1.8 1 .2.1.4 0 .6-.2l.8-.9c.2-.2.4-.3.7-.2l1.8.9c.3.1.4.3.4.5 0 .2-.1 1.2-.6 1.7-.5.5-1.3.8-2.1.8-.7 0-1.7-.2-3.2-1-1.5-.8-2.6-1.8-3.6-3.1-1-1.3-1.6-2.6-1.6-3.6 0-.6.2-1.1.4-1.5Z"></path>
+                        </svg>
 
                     </div>
 
 
-                    <div class="form-group">
+                    <span class="booking__status">
+                        <i></i>
+                        Atendimento pelo WhatsApp
+                    </span>
 
-                        <label for="telefone">
-                            WhatsApp
-                        </label>
+                    <h3>
+                        Seu horário está a uma
+                        <em>mensagem de distância.</em>
+                    </h3>
 
-                        <input
-                            type="tel"
-                            id="telefone"
-                            name="telefone"
-                            placeholder="(00) 99999-9999"
-                            required
-                        >
-
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="servico">
-                            Serviço
-                        </label>
-
-                        <select
-                            id="servico"
-                            name="servico"
-                            required
-                        >
-                            <option value="">
-                                Selecione
-                            </option>
-
-                            <option>
-                                Corte Blackline
-                            </option>
-
-                            <option>
-                                Barba Premium
-                            </option>
-
-                            <option>
-                                Corte + Barba
-                            </option>
-                        </select>
-
-                    </div>
+                    <p>
+                        Ao tocar no botão abaixo, o WhatsApp será aberto
+                        com uma mensagem pronta para iniciar o atendimento.
+                    </p>
 
 
-                    <div class="booking__row">
+                    <div class="booking__summary">
 
-                        <div class="form-group">
-
-                            <label for="data">
-                                Data
-                            </label>
-
-                            <input
-                                type="date"
-                                id="data"
-                                name="data"
-                                required
-                            >
-
+                        <div>
+                            <span>Atendimento</span>
+                            <strong>Terça a sábado</strong>
                         </div>
 
-
-                        <div class="form-group">
-
-                            <label for="horario">
-                                Horário
-                            </label>
-
-                            <select
-                                id="horario"
-                                name="horario"
-                                required
-                            >
-                                <option value="">
-                                    Escolha
-                                </option>
-
-                                <option>09:00</option>
-                                <option>10:30</option>
-                                <option>13:00</option>
-                                <option>14:30</option>
-                                <option>16:00</option>
-                                <option>18:00</option>
-                                <option>19:30</option>
-                            </select>
-
+                        <div>
+                            <span>Horário</span>
+                            <strong>09:00 às 20:00</strong>
                         </div>
 
                     </div>
 
 
-                    <button
-                        type="submit"
-                        class="button button--primary booking__submit"
+                    <a
+                        href="https://wa.me/5500000000000?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Blackline%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio."
+                        class="button button--whatsapp booking__whatsapp-button"
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
-                        Solicitar agendamento
+                        Conversar no WhatsApp
 
                         <svg viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M5 12h14"></path>
                             <path d="m13 6 6 6-6 6"></path>
                         </svg>
-                    </button>
+                    </a>
 
-                </form>
+                    <small class="booking__privacy">
+                        Você será redirecionado para o WhatsApp.
+                        Nenhum dado é solicitado ou armazenado neste site.
+                    </small>
+
+                </div>
 
             </div>
 
         </div>
 
     </div>
+
+
+    <!-- ATALHO FLUTUANTE PARA WHATSAPP -->
+    <a
+        href="https://wa.me/5500000000000?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Blackline%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es."
+        class="whatsapp-float"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Falar com a Blackline pelo WhatsApp"
+    >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20 11.6a8 8 0 0 1-11.8 7L4 20l1.4-4.1A8 8 0 1 1 20 11.6Z"></path>
+            <path d="M8.7 8.2c.2-.4.4-.4.7-.4h.4c.2 0 .4.1.5.4l.7 1.7c.1.3 0 .5-.2.7l-.5.6c-.2.2-.2.4-.1.6.4.8 1 1.5 1.7 2 .8.6 1.5.9 1.8 1 .2.1.4 0 .6-.2l.8-.9c.2-.2.4-.3.7-.2l1.8.9c.3.1.4.3.4.5 0 .2-.1 1.2-.6 1.7-.5.5-1.3.8-2.1.8-.7 0-1.7-.2-3.2-1-1.5-.8-2.6-1.8-3.6-3.1-1-1.3-1.6-2.6-1.6-3.6 0-.6.2-1.1.4-1.5Z"></path>
+        </svg>
+
+        <span>WhatsApp</span>
+    </a>
+
 
 </body>
 
