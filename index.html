@@ -1,150 +1,377 @@
+<!-- =========================
+     index.html
+========================= -->
+
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta
         name="description"
-        content="Barbearia Blackline - cortes, barba e cuidados masculinos em um ambiente premium, moderno e elegante."
+        content="Blackline Barbearia — cortes, barba e cuidado masculino com técnica, estilo e personalidade."
     >
 
-    <title>Barbearia Blackline</title>
+    <meta name="theme-color" content="#14272d">
+
+    <title>Blackline | Barbearia Premium</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
+
 <body>
 
-    <!-- =========================
+    <!-- =====================================================
+         BACKGROUND DECORATIVO
+    ====================================================== -->
+
+    <div class="page-glow page-glow--one" aria-hidden="true"></div>
+    <div class="page-glow page-glow--two" aria-hidden="true"></div>
+
+
+    <!-- =====================================================
          HEADER
-    ========================== -->
+    ====================================================== -->
+
     <header class="header">
+
         <div class="container header__container">
 
-            <a href="#inicio" class="header__logo" aria-label="Blackline - Página inicial">
-                <span class="header__logo-name">BLACKLINE</span>
-                <span class="header__logo-detail">BARBEARIA</span>
+            <a
+                href="#inicio"
+                class="brand"
+                aria-label="Blackline - Página inicial"
+            >
+                <span class="brand__symbol">B</span>
+
+                <span class="brand__text">
+                    <strong>BLACKLINE</strong>
+                    <small>BARBEARIA</small>
+                </span>
             </a>
 
-            <!-- Botão que será utilizado no menu mobile futuramente -->
-            <button
-                class="header__menu-button"
-                type="button"
-                aria-label="Abrir menu"
-                aria-expanded="false"
-                aria-controls="main-navigation"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
 
-            <nav
-                class="header__nav"
-                id="main-navigation"
-                aria-label="Navegação principal"
-            >
-                <ul class="header__nav-list">
-                    <li>
-                        <a href="#inicio" class="header__nav-link">
-                            Início
-                        </a>
-                    </li>
+            <!-- MENU DESKTOP -->
+            <nav class="header__nav" aria-label="Navegação principal">
 
-                    <li>
-                        <a href="#servicos" class="header__nav-link">
-                            Serviços
-                        </a>
-                    </li>
+                <a href="#inicio">Início</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#galeria">Galeria</a>
+                <a href="#localizacao">Localização</a>
 
-                    <li>
-                        <a href="#sobre" class="header__nav-link">
-                            Sobre
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#galeria" class="header__nav-link">
-                            Galeria
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#localizacao" class="header__nav-link">
-                            Localização
-                        </a>
-                    </li>
-                </ul>
             </nav>
 
-            <a href="#agendamento" class="button button--header">
+
+            <a href="#agendar" class="button button--header">
                 Agendar horário
+
+                <svg
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                >
+                    <path d="M5 12h14"></path>
+                    <path d="m13 6 6 6-6 6"></path>
+                </svg>
             </a>
 
+
+            <!-- MENU MOBILE SEM JAVASCRIPT -->
+            <input
+                type="checkbox"
+                id="menu-toggle"
+                class="menu-toggle"
+                aria-hidden="true"
+            >
+
+            <label
+                for="menu-toggle"
+                class="menu-button"
+                aria-label="Abrir menu"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+
+            <div class="mobile-nav">
+
+                <label
+                    for="menu-toggle"
+                    class="mobile-nav__overlay"
+                    aria-label="Fechar menu"
+                ></label>
+
+                <div class="mobile-nav__panel">
+
+                    <div class="mobile-nav__header">
+
+                        <span>Menu</span>
+
+                        <label
+                            for="menu-toggle"
+                            class="mobile-nav__close"
+                            aria-label="Fechar menu"
+                        >
+                            ×
+                        </label>
+
+                    </div>
+
+                    <nav aria-label="Navegação mobile">
+
+                        <a href="#inicio">
+                            <span>01</span>
+                            Início
+                        </a>
+
+                        <a href="#servicos">
+                            <span>02</span>
+                            Serviços
+                        </a>
+
+                        <a href="#sobre">
+                            <span>03</span>
+                            Sobre
+                        </a>
+
+                        <a href="#galeria">
+                            <span>04</span>
+                            Galeria
+                        </a>
+
+                        <a href="#localizacao">
+                            <span>05</span>
+                            Localização
+                        </a>
+
+                    </nav>
+
+                    <a
+                        href="#agendar"
+                        class="button button--primary mobile-nav__cta"
+                    >
+                        Agendar horário
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
+
     </header>
 
 
-    <!-- =========================
-         CONTEÚDO PRINCIPAL
-    ========================== -->
+
     <main>
 
-        <!-- =====================
+
+        <!-- =====================================================
              HERO
-        ====================== -->
+        ====================================================== -->
+
         <section class="hero" id="inicio">
+
+            <div class="hero__background" aria-hidden="true"></div>
 
             <div class="container hero__container">
 
                 <div class="hero__content">
 
-                    <span class="hero__eyebrow">
-                        Barbearia premium
-                    </span>
+                    <div class="hero__eyebrow reveal">
 
-                    <h1 class="hero__title">
-                        Seu estilo.
-                        <span>Nossa assinatura.</span>
+                        <span class="hero__eyebrow-line"></span>
+
+                        Barbearia premium
+
+                        <span class="hero__eyebrow-dot"></span>
+
+                        Desde 2018
+
+                    </div>
+
+
+                    <h1 class="hero__title reveal reveal--delay-1">
+
+                        ESTILO NÃO SE
+                        <span>IMPROVISA.</span>
+
                     </h1>
 
-                    <p class="hero__description">
-                        Cortes precisos, barba impecável e uma experiência
-                        criada para quem valoriza estilo, personalidade
-                        e excelência.
+
+                    <p class="hero__description reveal reveal--delay-2">
+
+                        Mais que um corte, uma experiência criada para
+                        transformar seu visual através de técnica,
+                        precisão e personalidade.
+
                     </p>
 
-                    <div class="hero__actions">
+
+                    <div class="hero__actions reveal reveal--delay-3">
 
                         <a
-                            href="#agendamento"
+                            href="#agendar"
                             class="button button--primary"
                         >
-                            Agendar horário
+                            Agendar agora
+
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M5 12h14"></path>
+                                <path d="m13 6 6 6-6 6"></path>
+                            </svg>
                         </a>
+
 
                         <a
                             href="#servicos"
-                            class="button button--secondary"
+                            class="button button--ghost"
                         >
-                            Ver serviços
+                            Conhecer serviços
                         </a>
+
+                    </div>
+
+
+                    <div class="hero__info reveal reveal--delay-4">
+
+                        <div>
+                            <strong>4.9</strong>
+
+                            <span class="stars">
+                                ★★★★★
+                            </span>
+
+                            <small>Experiência dos clientes</small>
+                        </div>
+
+
+                        <span class="hero__info-divider"></span>
+
+
+                        <div>
+                            <strong>+2.5K</strong>
+                            <span>visuais transformados</span>
+                        </div>
 
                     </div>
 
                 </div>
 
 
-                <div class="hero__image">
-                    <img
-                        src="assets/images/hero-barbearia.jpg"
-                        alt="Barbeiro realizando um corte de cabelo"
-                    >
+                <div class="hero__visual reveal reveal--delay-2">
+
+                    <div class="hero__image-wrapper">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1703792686383-4f307cbfa544?auto=format&fit=crop&w=1200&q=85"
+                            alt="Barbeiro realizando acabamento em corte masculino"
+                            class="hero__image"
+                        >
+
+                        <div class="hero__image-gradient"></div>
+
+
+                        <div class="hero__floating hero__floating--top">
+
+                            <span class="hero__floating-icon">
+                                ✦
+                            </span>
+
+                            <div>
+                                <small>Experiência</small>
+                                <strong>Premium</strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="hero__floating hero__floating--bottom">
+
+                            <div class="status-dot"></div>
+
+                            <div>
+                                <small>Agenda</small>
+                                <strong>Horários disponíveis</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="hero__outline-text" aria-hidden="true">
+                        BLACKLINE
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="#servicos"
+                class="hero__scroll"
+                aria-label="Ir para serviços"
+            >
+                <span>Role para descobrir</span>
+
+                <div class="hero__scroll-line">
+                    <span></span>
+                </div>
+            </a>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             MARQUEE
+        ====================================================== -->
+
+        <section class="marquee" aria-label="Serviços em destaque">
+
+            <div class="marquee__track">
+
+                <div class="marquee__content">
+                    <span>CORTE</span>
+                    <i>✦</i>
+                    <span>BARBA</span>
+                    <i>✦</i>
+                    <span>ACABAMENTO</span>
+                    <i>✦</i>
+                    <span>ESTILO</span>
+                    <i>✦</i>
+                    <span>EXPERIÊNCIA</span>
+                    <i>✦</i>
+                </div>
+
+                <div class="marquee__content" aria-hidden="true">
+                    <span>CORTE</span>
+                    <i>✦</i>
+                    <span>BARBA</span>
+                    <i>✦</i>
+                    <span>ACABAMENTO</span>
+                    <i>✦</i>
+                    <span>ESTILO</span>
+                    <i>✦</i>
+                    <span>EXPERIÊNCIA</span>
+                    <i>✦</i>
                 </div>
 
             </div>
@@ -152,360 +379,207 @@
         </section>
 
 
-        <!-- =====================
+
+        <!-- =====================================================
              SERVIÇOS
-        ====================== -->
+        ====================================================== -->
+
         <section class="services section" id="servicos">
 
             <div class="container">
 
-                <header class="section__header">
+                <div class="section-heading">
 
-                    <span class="section__eyebrow">
-                        Nossos serviços
-                    </span>
+                    <div>
 
-                    <h2 class="section__title">
-                        Precisão em cada detalhe
-                    </h2>
+                        <span class="section-tag">
+                            <span></span>
+                            Serviços
+                        </span>
 
-                    <p class="section__description">
-                        Serviços pensados para cuidar do seu visual
-                        com técnica, personalidade e atenção aos detalhes.
+                        <h2>
+                            O cuidado que
+                            <em>seu estilo merece.</em>
+                        </h2>
+
+                    </div>
+
+
+                    <p>
+                        Da tesoura ao acabamento final, cada serviço é
+                        realizado com atenção aos detalhes e pensado
+                        especialmente para você.
                     </p>
 
-                </header>
+                </div>
 
 
                 <div class="services__grid">
 
-                    <article class="service-card">
+                    <!-- SERVIÇO 01 -->
+                    <article class="service-card reveal-scroll">
 
-                        <div class="service-card__icon" aria-hidden="true">
-                            ✂
+                        <div class="service-card__number">
+                            01
                         </div>
 
-                        <h3 class="service-card__title">
-                            Corte
-                        </h3>
+                        <div class="service-card__icon">
 
-                        <p class="service-card__description">
-                            Cortes clássicos e modernos adaptados
-                            ao seu estilo.
-                        </p>
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <circle cx="6" cy="7" r="3"></circle>
+                                <circle cx="6" cy="17" r="3"></circle>
+                                <path d="m8.7 8.3 11.3 8.7"></path>
+                                <path d="m8.7 15.7 11.3-8.7"></path>
+                            </svg>
 
-                        <span class="service-card__price">
-                            A partir de R$ 45
-                        </span>
+                        </div>
+
+                        <div class="service-card__body">
+
+                            <h3>Corte Blackline</h3>
+
+                            <p>
+                                Corte personalizado de acordo com seu
+                                formato de rosto, estilo e personalidade.
+                            </p>
+
+                        </div>
+
+                        <div class="service-card__footer">
+
+                            <span>
+                                A partir de
+                                <strong>R$ 55</strong>
+                            </span>
+
+                            <a
+                                href="#modal-servicos"
+                                aria-label="Ver detalhes do corte"
+                            >
+                                ↗
+                            </a>
+
+                        </div>
 
                     </article>
 
 
-                    <article class="service-card">
 
-                        <div class="service-card__icon" aria-hidden="true">
-                            ◆
+                    <!-- SERVIÇO 02 -->
+                    <article class="service-card service-card--featured reveal-scroll">
+
+                        <span class="service-card__badge">
+                            Mais escolhido
+                        </span>
+
+                        <div class="service-card__number">
+                            02
                         </div>
 
-                        <h3 class="service-card__title">
-                            Barba
-                        </h3>
+                        <div class="service-card__icon">
 
-                        <p class="service-card__description">
-                            Modelagem, acabamento e cuidado completo
-                            para a sua barba.
-                        </p>
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M4 8c1.6 1.8 3.5 2.7 5.7 2.7"></path>
+                                <path d="M20 8c-1.6 1.8-3.5 2.7-5.7 2.7"></path>
+                                <path d="M9.7 10.7c.3 4.1 1.1 7.2 2.3 9.3"></path>
+                                <path d="M14.3 10.7c-.3 4.1-1.1 7.2-2.3 9.3"></path>
+                                <path d="M6 6c1-2 3-3 6-3s5 1 6 3"></path>
+                            </svg>
 
-                        <span class="service-card__price">
-                            A partir de R$ 35
-                        </span>
+                        </div>
+
+                        <div class="service-card__body">
+
+                            <h3>Corte + Barba</h3>
+
+                            <p>
+                                A experiência completa: corte,
+                                modelagem da barba e acabamento premium.
+                            </p>
+
+                        </div>
+
+                        <div class="service-card__footer">
+
+                            <span>
+                                A partir de
+                                <strong>R$ 85</strong>
+                            </span>
+
+                            <a
+                                href="#modal-servicos"
+                                aria-label="Ver detalhes do corte e barba"
+                            >
+                                ↗
+                            </a>
+
+                        </div>
 
                     </article>
 
 
-                    <article class="service-card">
 
-                        <div class="service-card__icon" aria-hidden="true">
-                            ✦
+                    <!-- SERVIÇO 03 -->
+                    <article class="service-card reveal-scroll">
+
+                        <div class="service-card__number">
+                            03
                         </div>
 
-                        <h3 class="service-card__title">
-                            Corte + Barba
-                        </h3>
+                        <div class="service-card__icon">
 
-                        <p class="service-card__description">
-                            A experiência Blackline completa para
-                            renovar seu visual.
-                        </p>
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M7 3v5"></path>
+                                <path d="M17 3v5"></path>
+                                <path d="M5 8h14"></path>
+                                <path d="M6 8v8a6 6 0 0 0 12 0V8"></path>
+                                <path d="M9 13h6"></path>
+                            </svg>
 
-                        <span class="service-card__price">
-                            A partir de R$ 70
-                        </span>
+                        </div>
+
+                        <div class="service-card__body">
+
+                            <h3>Barba Premium</h3>
+
+                            <p>
+                                Modelagem, toalha quente, acabamento e
+                                hidratação para renovar sua barba.
+                            </p>
+
+                        </div>
+
+                        <div class="service-card__footer">
+
+                            <span>
+                                A partir de
+                                <strong>R$ 40</strong>
+                            </span>
+
+                            <a
+                                href="#modal-servicos"
+                                aria-label="Ver detalhes da barba"
+                            >
+                                ↗
+                            </a>
+
+                        </div>
 
                     </article>
 
                 </div>
 
-            </div>
 
-        </section>
-
-
-        <!-- =====================
-             SOBRE
-        ====================== -->
-        <section class="about section" id="sobre">
-
-            <div class="container about__container">
-
-                <div class="about__image">
-                    <img
-                        src="assets/images/sobre-barbearia.jpg"
-                        alt="Interior da Barbearia Blackline"
-                        loading="lazy"
-                    >
-                </div>
-
-
-                <div class="about__content">
-
-                    <span class="section__eyebrow">
-                        Blackline
-                    </span>
-
-                    <h2 class="section__title">
-                        Mais que um corte.
-                        Uma experiência.
-                    </h2>
+                <div class="services__bottom">
 
                     <p>
-                        A Blackline nasceu com a proposta de unir a tradição
-                        das barbearias clássicas a uma experiência moderna,
-                        sofisticada e personalizada.
+                        Precisa de algo específico?
+                        <strong>Montamos uma experiência para você.</strong>
                     </p>
 
-                    <p>
-                        Cada atendimento é pensado nos mínimos detalhes,
-                        desde o ambiente até o acabamento final.
-                    </p>
-
-
-                    <div class="about__numbers">
-
-                        <div class="about__number">
-                            <strong>5+</strong>
-                            <span>Anos de experiência</span>
-                        </div>
-
-                        <div class="about__number">
-                            <strong>3k+</strong>
-                            <span>Clientes atendidos</span>
-                        </div>
-
-                        <div class="about__number">
-                            <strong>4.9</strong>
-                            <span>Avaliação média</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================
-             GALERIA
-        ====================== -->
-        <section class="gallery section" id="galeria">
-
-            <div class="container">
-
-                <header class="section__header">
-
-                    <span class="section__eyebrow">
-                        Galeria
-                    </span>
-
-                    <h2 class="section__title">
-                        O estilo Blackline
-                    </h2>
-
-                </header>
-
-
-                <div class="gallery__grid">
-
-                    <figure class="gallery__item">
-                        <img
-                            src="assets/images/galeria-01.jpg"
-                            alt="Corte masculino realizado na Blackline"
-                            loading="lazy"
-                        >
-                    </figure>
-
-
-                    <figure class="gallery__item">
-                        <img
-                            src="assets/images/galeria-02.jpg"
-                            alt="Barbeiro trabalhando em acabamento de barba"
-                            loading="lazy"
-                        >
-                    </figure>
-
-
-                    <figure class="gallery__item">
-                        <img
-                            src="assets/images/galeria-03.jpg"
-                            alt="Ambiente interno da Barbearia Blackline"
-                            loading="lazy"
-                        >
-                    </figure>
-
-
-                    <figure class="gallery__item">
-                        <img
-                            src="assets/images/galeria-04.jpg"
-                            alt="Detalhes de um corte masculino"
-                            loading="lazy"
-                        >
-                    </figure>
-
-
-                    <figure class="gallery__item">
-                        <img
-                            src="assets/images/galeria-05.jpg"
-                            alt="Atendimento na Barbearia Blackline"
-                            loading="lazy"
-                        >
-                    </figure>
-
-
-                    <figure class="gallery__item">
-                        <img
-                            src="assets/images/galeria-06.jpg"
-                            alt="Resultado de corte realizado na Blackline"
-                            loading="lazy"
-                        >
-                    </figure>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================
-             HORÁRIOS E LOCALIZAÇÃO
-        ====================== -->
-        <section class="location section" id="localizacao">
-
-            <div class="container location__container">
-
-                <div class="location__content">
-
-                    <span class="section__eyebrow">
-                        Visite a Blackline
-                    </span>
-
-                    <h2 class="section__title">
-                        Horários e localização
-                    </h2>
-
-
-                    <div class="location__info">
-
-                        <div class="location__item">
-
-                            <h3>Endereço</h3>
-
-                            <address>
-                                Avenida Central, 240<br>
-                                Centro
-                            </address>
-
-                        </div>
-
-
-                        <div class="location__item">
-
-                            <h3>Horários</h3>
-
-                            <ul class="schedule">
-
-                                <li>
-                                    <span>Segunda a Sexta</span>
-                                    <strong>09:00 — 20:00</strong>
-                                </li>
-
-                                <li>
-                                    <span>Sábado</span>
-                                    <strong>09:00 — 18:00</strong>
-                                </li>
-
-                                <li>
-                                    <span>Domingo</span>
-                                    <strong>Fechado</strong>
-                                </li>
-
-                            </ul>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- Área reservada para mapa -->
-                <div class="location__map">
-
-                    <div class="location__map-placeholder">
-
-                        <span>Localização</span>
-
-                        <p>
-                            O mapa será adicionado posteriormente.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =====================
-             CTA / AGENDAMENTO
-        ====================== -->
-        <section class="booking section" id="agendamento">
-
-            <div class="container booking__container">
-
-                <div class="booking__content">
-
-                    <span class="section__eyebrow">
-                        Seu próximo corte começa aqui
-                    </span>
-
-                    <h2 class="booking__title">
-                        Pronto para renovar seu estilo?
-                    </h2>
-
-                    <p class="booking__description">
-                        Escolha seu horário e viva a experiência Blackline.
-                    </p>
-
-                    <a
-                        href="#"
-                        class="button button--primary"
-                    >
-                        Agendar agora
+                    <a href="#agendar">
+                        Falar com a Blackline
+                        <span>→</span>
                     </a>
 
                 </div>
@@ -514,90 +588,674 @@
 
         </section>
 
-    </main>
 
 
-    <!-- =========================
-         FOOTER
-    ========================== -->
-    <footer class="footer">
+        <!-- =====================================================
+             SOBRE
+        ====================================================== -->
 
-        <div class="container footer__container">
+        <section class="about section" id="sobre">
 
-            <div class="footer__brand">
+            <div class="container about__container">
 
-                <a href="#inicio" class="footer__logo">
-                    BLACKLINE
+                <div class="about__visual reveal-scroll">
+
+                    <div class="about__image-main">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1559453252-1634e4c59f20?auto=format&fit=crop&w=1000&q=85"
+                            alt="Profissional realizando acabamento de barba"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+
+                    <div class="about__image-secondary">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1702865272115-5afdbae975af?auto=format&fit=crop&w=700&q=85"
+                            alt="Cadeira de barbearia em ambiente sofisticado"
+                            loading="lazy"
+                        >
+
+                    </div>
+
+
+                    <div class="about__experience">
+
+                        <strong>08</strong>
+
+                        <div>
+                            <span>anos de</span>
+                            <b>experiência</b>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="about__content">
+
+                    <span class="section-tag">
+                        <span></span>
+                        Nossa essência
+                    </span>
+
+
+                    <h2>
+                        MAIS QUE UMA
+                        <em>BARBEARIA.</em>
+                    </h2>
+
+
+                    <p class="about__lead">
+                        A Blackline nasceu da ideia de transformar um
+                        serviço tradicional em uma experiência que une
+                        técnica, conforto, identidade e estilo.
+                    </p>
+
+
+                    <p>
+                        Aqui cada detalhe importa. Do primeiro atendimento
+                        ao último acabamento, buscamos entender quem você é
+                        para criar um visual que realmente combine com sua
+                        personalidade.
+                    </p>
+
+
+                    <div class="about__features">
+
+                        <div>
+                            <span>01</span>
+
+                            <div>
+                                <strong>Atendimento personalizado</strong>
+                                <p>Seu estilo é único. Seu corte também.</p>
+                            </div>
+                        </div>
+
+
+                        <div>
+                            <span>02</span>
+
+                            <div>
+                                <strong>Profissionais especializados</strong>
+                                <p>Técnica, experiência e atualização constante.</p>
+                            </div>
+                        </div>
+
+
+                        <div>
+                            <span>03</span>
+
+                            <div>
+                                <strong>Ambiente exclusivo</strong>
+                                <p>Conforto e personalidade em cada espaço.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="#galeria"
+                        class="text-link"
+                    >
+                        Conheça nosso espaço
+
+                        <span>↗</span>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             EXPERIÊNCIA
+        ====================================================== -->
+
+        <section class="experience">
+
+            <div class="experience__background"></div>
+
+            <div class="container experience__content">
+
+                <span class="section-tag section-tag--light">
+                    <span></span>
+                    Blackline Experience
+                </span>
+
+
+                <blockquote>
+                    “Não seguimos tendências.
+                    <strong>Criamos sua assinatura.</strong>”
+                </blockquote>
+
+
+                <a
+                    href="#agendar"
+                    class="button button--vanilla"
+                >
+                    Viva a experiência
+
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 12h14"></path>
+                        <path d="m13 6 6 6-6 6"></path>
+                    </svg>
                 </a>
 
-                <p>
-                    Estilo, precisão e personalidade
-                    em cada detalhe.
-                </p>
-
             </div>
 
-
-            <div class="footer__navigation">
-
-                <h2>Navegação</h2>
-
-                <ul>
-                    <li>
-                        <a href="#inicio">Início</a>
-                    </li>
-
-                    <li>
-                        <a href="#servicos">Serviços</a>
-                    </li>
-
-                    <li>
-                        <a href="#sobre">Sobre</a>
-                    </li>
-
-                    <li>
-                        <a href="#galeria">Galeria</a>
-                    </li>
-
-                    <li>
-                        <a href="#localizacao">Localização</a>
-                    </li>
-                </ul>
-
-            </div>
+        </section>
 
 
-            <div class="footer__social">
 
-                <h2>Redes sociais</h2>
+        <!-- =====================================================
+             GALERIA
+        ====================================================== -->
 
-                <ul>
-                    <li>
-                        <a href="#" aria-label="Instagram da Blackline">
-                            Instagram
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#" aria-label="WhatsApp da Blackline">
-                            WhatsApp
-                        </a>
-                    </li>
-                </ul>
-
-            </div>
-
-        </div>
-
-
-        <div class="footer__bottom">
+        <section class="gallery section" id="galeria">
 
             <div class="container">
 
+                <div class="section-heading section-heading--gallery">
+
+                    <div>
+
+                        <span class="section-tag">
+                            <span></span>
+                            Galeria
+                        </span>
+
+                        <h2>
+                            DETALHES QUE
+                            <em>FALAM POR SI.</em>
+                        </h2>
+
+                    </div>
+
+
+                    <p>
+                        Técnica, ambiente e cuidado em uma experiência
+                        pensada para cada cliente.
+                    </p>
+
+                </div>
+
+
+                <div class="gallery__grid">
+
+                    <figure class="gallery-card gallery-card--large reveal-scroll">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1648221122279-5246dd0cf86c?auto=format&fit=crop&w=1200&q=85"
+                            alt="Barbeiro realizando corte masculino"
+                            loading="lazy"
+                        >
+
+                        <figcaption>
+                            <span>01</span>
+                            <strong>Precisão</strong>
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="gallery-card reveal-scroll">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1702865272115-5afdbae975af?auto=format&fit=crop&w=900&q=85"
+                            alt="Cadeira premium de barbearia"
+                            loading="lazy"
+                        >
+
+                        <figcaption>
+                            <span>02</span>
+                            <strong>Ambiente</strong>
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="gallery-card reveal-scroll">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1559453252-1634e4c59f20?auto=format&fit=crop&w=900&q=85"
+                            alt="Acabamento de barba"
+                            loading="lazy"
+                        >
+
+                        <figcaption>
+                            <span>03</span>
+                            <strong>Detalhes</strong>
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="gallery-card gallery-card--wide reveal-scroll">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1672257493563-0dac80e22b7d?auto=format&fit=crop&w=1400&q=85"
+                            alt="Interior de barbearia com cadeiras e espelhos"
+                            loading="lazy"
+                        >
+
+                        <figcaption>
+                            <span>04</span>
+                            <strong>Blackline</strong>
+                        </figcaption>
+
+                    </figure>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             DEPOIMENTOS
+        ====================================================== -->
+
+        <section class="reviews section">
+
+            <div class="container">
+
+                <div class="reviews__heading">
+
+                    <span class="section-tag">
+                        <span></span>
+                        Quem conhece, recomenda
+                    </span>
+
+                    <h2>
+                        EXPERIÊNCIA QUE
+                        <em>DEIXA MARCA.</em>
+                    </h2>
+
+                </div>
+
+
+                <div class="reviews__grid">
+
+                    <article class="review-card reveal-scroll">
+
+                        <div class="review-card__top">
+
+                            <span class="review-card__quote">“</span>
+
+                            <div class="review-card__stars">
+                                ★★★★★
+                            </div>
+
+                        </div>
+
+                        <p>
+                            Atendimento impecável. O barbeiro realmente
+                            entendeu o estilo que eu queria e o resultado
+                            ficou melhor do que imaginei.
+                        </p>
+
+                        <footer>
+
+                            <div class="review-card__avatar">
+                                GM
+                            </div>
+
+                            <div>
+                                <strong>Gabriel Martins</strong>
+                                <span>Cliente Blackline</span>
+                            </div>
+
+                        </footer>
+
+                    </article>
+
+
+                    <article class="review-card reveal-scroll">
+
+                        <div class="review-card__top">
+
+                            <span class="review-card__quote">“</span>
+
+                            <div class="review-card__stars">
+                                ★★★★★
+                            </div>
+
+                        </div>
+
+                        <p>
+                            Ambiente muito bonito e confortável. Dá para
+                            perceber o cuidado em todos os detalhes, do
+                            atendimento ao acabamento do corte.
+                        </p>
+
+                        <footer>
+
+                            <div class="review-card__avatar">
+                                LR
+                            </div>
+
+                            <div>
+                                <strong>Lucas Ribeiro</strong>
+                                <span>Cliente Blackline</span>
+                            </div>
+
+                        </footer>
+
+                    </article>
+
+
+                    <article class="review-card reveal-scroll">
+
+                        <div class="review-card__top">
+
+                            <span class="review-card__quote">“</span>
+
+                            <div class="review-card__stars">
+                                ★★★★★
+                            </div>
+
+                        </div>
+
+                        <p>
+                            Finalmente encontrei uma barbearia em que posso
+                            chegar e confiar totalmente no profissional.
+                            Experiência excelente.
+                        </p>
+
+                        <footer>
+
+                            <div class="review-card__avatar">
+                                MA
+                            </div>
+
+                            <div>
+                                <strong>Mateus Almeida</strong>
+                                <span>Cliente Blackline</span>
+                            </div>
+
+                        </footer>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             LOCALIZAÇÃO / HORÁRIOS
+        ====================================================== -->
+
+        <section
+            class="location section"
+            id="localizacao"
+        >
+
+            <div class="container location__container">
+
+                <div class="location__content">
+
+                    <span class="section-tag">
+                        <span></span>
+                        Visite a Blackline
+                    </span>
+
+
+                    <h2>
+                        SEU PRÓXIMO VISUAL
+                        <em>COMEÇA AQUI.</em>
+                    </h2>
+
+
+                    <p>
+                        Reserve seu horário e venha viver a experiência
+                        Blackline.
+                    </p>
+
+
+                    <div class="location__details">
+
+                        <div class="location-item">
+
+                            <span class="location-item__icon">
+
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M12 21s7-5 7-12a7 7 0 1 0-14 0c0 7 7 12 7 12Z"></path>
+                                    <circle cx="12" cy="9" r="2.5"></circle>
+                                </svg>
+
+                            </span>
+
+                            <div>
+                                <small>Localização</small>
+                                <strong>Rua Blackline, 147 — Centro</strong>
+                                <span>Sua cidade — Brasil</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="location-item">
+
+                            <span class="location-item__icon">
+
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="9"></circle>
+                                    <path d="M12 7v5l3 2"></path>
+                                </svg>
+
+                            </span>
+
+                            <div>
+                                <small>Funcionamento</small>
+                                <strong>Terça — Sábado</strong>
+                                <span>09:00 às 20:00</span>
+                            </div>
+
+                        </div>
+
+
+                        <div class="location-item">
+
+                            <span class="location-item__icon">
+
+                                <svg viewBox="0 0 24 24" aria-hidden="true">
+                                    <path d="M4 5h16v12H8l-4 3Z"></path>
+                                </svg>
+
+                            </span>
+
+                            <div>
+                                <small>Contato</small>
+                                <strong>(00) 99999-9999</strong>
+                                <span>@blacklinebarbearia</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="#agendar"
+                        class="button button--primary"
+                    >
+                        Agendar horário
+
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M5 12h14"></path>
+                            <path d="m13 6 6 6-6 6"></path>
+                        </svg>
+                    </a>
+
+                </div>
+
+
+                <div class="location__visual reveal-scroll">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1672257493563-0dac80e22b7d?auto=format&fit=crop&w=1200&q=85"
+                        alt="Interior de uma barbearia"
+                        loading="lazy"
+                    >
+
+                    <div class="location__card">
+
+                        <span>Estamos esperando por você.</span>
+
+                        <strong>
+                            BLACKLINE
+                        </strong>
+
+                        <small>
+                            Barber experience
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CTA
+        ====================================================== -->
+
+        <section class="cta">
+
+            <div class="cta__circle cta__circle--one"></div>
+            <div class="cta__circle cta__circle--two"></div>
+
+            <div class="container cta__container">
+
+                <div class="cta__symbol">
+                    B
+                </div>
+
+                <span>
+                    Pronto para mudar?
+                </span>
+
+                <h2>
+                    SUA MELHOR VERSÃO
+                    <em>COMEÇA AGORA.</em>
+                </h2>
+
                 <p>
-                    &copy; 2026 Barbearia Blackline.
+                    Escolha seu horário. O resto deixa com a Blackline.
+                </p>
+
+
+                <a
+                    href="#agendar"
+                    class="button button--dark"
+                >
+                    Quero agendar
+
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 12h14"></path>
+                        <path d="m13 6 6 6-6 6"></path>
+                    </svg>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer__top">
+
+                <div class="footer__brand">
+
+                    <a
+                        href="#inicio"
+                        class="brand brand--footer"
+                    >
+                        <span class="brand__symbol">B</span>
+
+                        <span class="brand__text">
+                            <strong>BLACKLINE</strong>
+                            <small>BARBEARIA</small>
+                        </span>
+                    </a>
+
+                    <p>
+                        Estilo, técnica e personalidade em uma experiência
+                        feita para quem valoriza os detalhes.
+                    </p>
+
+                </div>
+
+
+                <div class="footer__navigation">
+
+                    <div>
+                        <strong>Navegação</strong>
+
+                        <a href="#inicio">Início</a>
+                        <a href="#servicos">Serviços</a>
+                        <a href="#sobre">Sobre</a>
+                        <a href="#galeria">Galeria</a>
+                    </div>
+
+
+                    <div>
+                        <strong>Contato</strong>
+
+                        <a href="#localizacao">Localização</a>
+                        <a href="#agendar">Agendamento</a>
+                        <a href="#">Instagram</a>
+                        <a href="#">WhatsApp</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer__line"></div>
+
+
+            <div class="footer__bottom">
+
+                <p>
+                    © 2026 Blackline Barbearia.
                     Todos os direitos reservados.
                 </p>
+
+                <div>
+                    <a href="#">Privacidade</a>
+                    <a href="#">Termos</a>
+                </div>
 
             </div>
 
@@ -606,7 +1264,314 @@
     </footer>
 
 
-    <script src="js/script.js"></script>
+
+    <!-- =====================================================
+         MODAL - SERVIÇOS
+         FUNCIONA APENAS COM HTML + CSS ATRAVÉS DE :target
+    ====================================================== -->
+
+    <div
+        class="modal"
+        id="modal-servicos"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-servicos-title"
+    >
+
+        <a
+            href="#servicos"
+            class="modal__backdrop"
+            aria-label="Fechar modal"
+        ></a>
+
+
+        <div class="modal__content">
+
+            <a
+                href="#servicos"
+                class="modal__close"
+                aria-label="Fechar modal"
+            >
+                ×
+            </a>
+
+
+            <span class="section-tag">
+                <span></span>
+                Experiência Blackline
+            </span>
+
+
+            <h2 id="modal-servicos-title">
+                MAIS QUE UM
+                <em>SERVIÇO.</em>
+            </h2>
+
+
+            <p>
+                Todos os atendimentos começam com uma breve análise do
+                seu estilo, formato de rosto e resultado desejado.
+            </p>
+
+
+            <div class="modal__services">
+
+                <div>
+                    <span>01</span>
+
+                    <div>
+                        <strong>Corte personalizado</strong>
+                        <p>Consultoria + corte + finalização.</p>
+                    </div>
+                </div>
+
+
+                <div>
+                    <span>02</span>
+
+                    <div>
+                        <strong>Barba premium</strong>
+                        <p>Modelagem + acabamento + hidratação.</p>
+                    </div>
+                </div>
+
+
+                <div>
+                    <span>03</span>
+
+                    <div>
+                        <strong>Experiência completa</strong>
+                        <p>Corte + barba + acabamento Blackline.</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <a
+                href="#agendar"
+                class="button button--primary"
+            >
+                Escolher meu horário
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         MODAL - AGENDAMENTO
+    ====================================================== -->
+
+    <div
+        class="modal modal--booking"
+        id="agendar"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="booking-title"
+    >
+
+        <a
+            href="#inicio"
+            class="modal__backdrop"
+            aria-label="Fechar agendamento"
+        ></a>
+
+
+        <div class="modal__content modal__content--booking">
+
+            <a
+                href="#inicio"
+                class="modal__close"
+                aria-label="Fechar agendamento"
+            >
+                ×
+            </a>
+
+
+            <div class="booking">
+
+                <div class="booking__intro">
+
+                    <span class="section-tag">
+                        <span></span>
+                        Agendamento
+                    </span>
+
+                    <h2 id="booking-title">
+                        RESERVE SEU
+                        <em>HORÁRIO.</em>
+                    </h2>
+
+                    <p>
+                        Escolha os dados do seu atendimento.
+                        Depois você poderá conectar este formulário
+                        ao seu back-end ou sistema de agendamento.
+                    </p>
+
+
+                    <div class="booking__info">
+
+                        <div>
+                            <span>01</span>
+                            <p>Escolha o serviço</p>
+                        </div>
+
+                        <div>
+                            <span>02</span>
+                            <p>Defina a melhor data</p>
+                        </div>
+
+                        <div>
+                            <span>03</span>
+                            <p>Confirme seu atendimento</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <form
+                    class="booking__form"
+                    action="#"
+                    method="post"
+                >
+
+                    <div class="form-group">
+
+                        <label for="nome">
+                            Seu nome
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Digite seu nome"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="telefone">
+                            WhatsApp
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="telefone"
+                            name="telefone"
+                            placeholder="(00) 99999-9999"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="servico">
+                            Serviço
+                        </label>
+
+                        <select
+                            id="servico"
+                            name="servico"
+                            required
+                        >
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option>
+                                Corte Blackline
+                            </option>
+
+                            <option>
+                                Barba Premium
+                            </option>
+
+                            <option>
+                                Corte + Barba
+                            </option>
+                        </select>
+
+                    </div>
+
+
+                    <div class="booking__row">
+
+                        <div class="form-group">
+
+                            <label for="data">
+                                Data
+                            </label>
+
+                            <input
+                                type="date"
+                                id="data"
+                                name="data"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="horario">
+                                Horário
+                            </label>
+
+                            <select
+                                id="horario"
+                                name="horario"
+                                required
+                            >
+                                <option value="">
+                                    Escolha
+                                </option>
+
+                                <option>09:00</option>
+                                <option>10:30</option>
+                                <option>13:00</option>
+                                <option>14:30</option>
+                                <option>16:00</option>
+                                <option>18:00</option>
+                                <option>19:30</option>
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="button button--primary booking__submit"
+                    >
+                        Solicitar agendamento
+
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M5 12h14"></path>
+                            <path d="m13 6 6 6-6 6"></path>
+                        </svg>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </body>
+
 </html>
